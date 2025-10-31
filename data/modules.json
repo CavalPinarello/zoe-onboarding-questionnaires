@@ -1,0 +1,1092 @@
+{
+  "DBAS-16": {
+    "name": "DBAS-16",
+    "description": "DBAS-16: DYSFUNCTIONAL BELIEFS ABOUT SLEEP",
+    "trigger_condition": "TRIGGER: Positive insomnia gateway (trouble falling/staying asleep). Scale: 0=Strongly disagree to 10=Strongly agree",
+    "question_count": 16,
+    "questions": [
+      {
+        "id": "DBAS-16_1",
+        "number": 1,
+        "text": "I need 8 hours of sleep to feel refreshed and function well during the day (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_2",
+        "number": 2,
+        "text": "When I don't get the proper amount of sleep on a given night, I need to catch up on the next day by napping or sleeping longer (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_3",
+        "number": 3,
+        "text": "I am concerned that chronic insomnia may have serious consequences on my physical health (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_4",
+        "number": 4,
+        "text": "I am worried that I may lose control over my abilities to sleep (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_5",
+        "number": 5,
+        "text": "After a poor night's sleep, I know that it will interfere with my daily activities on the next day (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_6",
+        "number": 6,
+        "text": "In order to be alert and function well during the day, I believe I would be better off taking a sleeping pill rather than having a poor night's sleep (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_7",
+        "number": 7,
+        "text": "When I feel irritable, depressed, or anxious during the day, it is mostly because I did not sleep well the night before (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_8",
+        "number": 8,
+        "text": "When I sleep poorly on one night, I know it will disturb my sleep schedule for the whole week (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_9",
+        "number": 9,
+        "text": "Without an adequate night's sleep, I can hardly function the next day (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_10",
+        "number": 10,
+        "text": "I can't ever predict whether I'll have a good or poor night's sleep (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_11",
+        "number": 11,
+        "text": "I have little ability to manage the negative consequences of disturbed sleep (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_12",
+        "number": 12,
+        "text": "When I feel tired, have no energy, or just seem not to function well during the day, it is generally because I did not sleep well the night before (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_13",
+        "number": 13,
+        "text": "I believe insomnia is essentially the result of a chemical imbalance (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_14",
+        "number": 14,
+        "text": "I feel that insomnia is ruining my ability to enjoy life and prevents me from doing what I want (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_15",
+        "number": 15,
+        "text": "Medication is probably the only solution to sleeplessness (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DBAS-16_16",
+        "number": 16,
+        "text": "I avoid or cancel obligations (social, family) after a poor night's sleep (0-10)",
+        "type": "EXPANSION",
+        "module": "DBAS-16",
+        "answer_type": "scale",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "triggers_expansion": false
+      }
+    ]
+  },
+  "FSS": {
+    "name": "FSS",
+    "description": "FATIGUE SEVERITY SCALE (FSS)",
+    "trigger_condition": "TRIGGER: Excessive daytime sleepiness gateway. Scale: 1=Strongly disagree to 7=Strongly agree",
+    "question_count": 9,
+    "questions": [
+      {
+        "id": "FSS_1",
+        "number": 1,
+        "text": "My motivation is lower when I am fatigued (1-7)",
+        "type": "EXPANSION",
+        "module": "FSS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FSS_2",
+        "number": 2,
+        "text": "Exercise brings on my fatigue (1-7)",
+        "type": "EXPANSION",
+        "module": "FSS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FSS_3",
+        "number": 3,
+        "text": "I am easily fatigued (1-7)",
+        "type": "EXPANSION",
+        "module": "FSS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FSS_4",
+        "number": 4,
+        "text": "Fatigue interferes with my physical functioning (1-7)",
+        "type": "EXPANSION",
+        "module": "FSS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FSS_5",
+        "number": 5,
+        "text": "Fatigue causes frequent problems for me (1-7)",
+        "type": "EXPANSION",
+        "module": "FSS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FSS_6",
+        "number": 6,
+        "text": "My fatigue prevents sustained physical functioning (1-7)",
+        "type": "EXPANSION",
+        "module": "FSS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FSS_7",
+        "number": 7,
+        "text": "Fatigue interferes with carrying out certain duties and responsibilities (1-7)",
+        "type": "EXPANSION",
+        "module": "FSS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FSS_8",
+        "number": 8,
+        "text": "Fatigue is among my three most disabling symptoms (1-7)",
+        "type": "EXPANSION",
+        "module": "FSS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FSS_9",
+        "number": 9,
+        "text": "Fatigue interferes with my work, family, or social life (1-7)",
+        "type": "EXPANSION",
+        "module": "FSS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      }
+    ]
+  },
+  "PSAS": {
+    "name": "PSAS",
+    "description": "PRE-SLEEP AROUSAL SCALE (PSAS)",
+    "trigger_condition": "TRIGGER: Positive insomnia gateway. Measures physiological and cognitive arousal before sleep. Scale: 1=Not at all, 5=Extremely",
+    "question_count": 16,
+    "questions": [
+      {
+        "id": "PSAS_1",
+        "number": 1,
+        "text": "Racing thoughts (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_2",
+        "number": 2,
+        "text": "Worry about falling asleep (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_3",
+        "number": 3,
+        "text": "Review or ponder events of the day (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_4",
+        "number": 4,
+        "text": "Depressing or anxious thoughts (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_5",
+        "number": 5,
+        "text": "Worry about problems other than sleep (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_6",
+        "number": 6,
+        "text": "Being mentally alert, active (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_7",
+        "number": 7,
+        "text": "Unable to shut your mind off (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_8",
+        "number": 8,
+        "text": "Thoughts keep you awake (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_9",
+        "number": 9,
+        "text": "Heart racing, pounding, or beating irregularly (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_10",
+        "number": 10,
+        "text": "Shortness of breath (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_11",
+        "number": 11,
+        "text": "Cold feeling in arms or legs (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_12",
+        "number": 12,
+        "text": "Numbness or tingling in parts of body (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_13",
+        "number": 13,
+        "text": "Stomach upset (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_14",
+        "number": 14,
+        "text": "Sweating (in an uncool environment) (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_15",
+        "number": 15,
+        "text": "Dry mouth (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "PSAS_16",
+        "number": 16,
+        "text": "Muscle tension (1-5)",
+        "type": "EXPANSION",
+        "module": "PSAS",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      }
+    ]
+  },
+  "FOSQ-10": {
+    "name": "FOSQ-10",
+    "description": "FUNCTIONAL OUTCOMES OF SLEEP QUESTIONNAIRE-10",
+    "trigger_condition": "TRIGGER: Excessive daytime sleepiness. Measures impact on daily functioning. Scale: 1=Extreme difficulty, 4=No difficulty",
+    "question_count": 10,
+    "questions": [
+      {
+        "id": "FOSQ-10_1",
+        "number": 1,
+        "text": "Difficulty concentrating on things you read or do (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FOSQ-10_2",
+        "number": 2,
+        "text": "Difficulty remembering things (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FOSQ-10_3",
+        "number": 3,
+        "text": "Difficulty working on a hobby, for example, sewing, collecting, gardening, woodworking (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FOSQ-10_4",
+        "number": 4,
+        "text": "Difficulty getting things done because you felt tired or sleepy (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FOSQ-10_5",
+        "number": 5,
+        "text": "Difficulty being as active as you wanted to be in the evening (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FOSQ-10_6",
+        "number": 6,
+        "text": "Difficulty maintaining a telephone conversation (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FOSQ-10_7",
+        "number": 7,
+        "text": "Difficulty maintaining your desired level of intimacy with your partner (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FOSQ-10_8",
+        "number": 8,
+        "text": "Difficulty doing things for your family (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FOSQ-10_9",
+        "number": 9,
+        "text": "Difficulty visiting family or friends in their homes in the evening (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "FOSQ-10_10",
+        "number": 10,
+        "text": "Difficulty being as active as you wanted to be socially (1-4)",
+        "type": "EXPANSION",
+        "module": "FOSQ-10",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      }
+    ]
+  },
+  "Sleep Hygiene": {
+    "name": "Sleep Hygiene",
+    "description": "SLEEP HYGIENE INDEX (SHI)",
+    "trigger_condition": "TRIGGER: Poor sleep quality score or insomnia gateway. Scale: 0=Never, 4=Always",
+    "question_count": 13,
+    "questions": [
+      {
+        "id": "SLEEP_HYGIENE_1",
+        "number": 1,
+        "text": "I take daytime naps lasting two or more hours (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "numeric",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_2",
+        "number": 2,
+        "text": "I go to bed at different times from day to day (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_3",
+        "number": 3,
+        "text": "I get out of bed at different times from day to day (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_4",
+        "number": 4,
+        "text": "I exercise to the point of sweating within 1 hour of going to bed (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_5",
+        "number": 5,
+        "text": "I stay in bed longer than I should two or three times a week (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_6",
+        "number": 6,
+        "text": "I use alcohol, tobacco, or caffeine within 4 hours of going to bed (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "numeric",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_7",
+        "number": 7,
+        "text": "I do something that may wake me up before bedtime (for example, play video games, use the internet, or clean) (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_8",
+        "number": 8,
+        "text": "I go to bed feeling stressed, angry, upset, or nervous (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_9",
+        "number": 9,
+        "text": "I use my bed for things other than sleep or sex (for example, watch television, read, eat, or study) (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_10",
+        "number": 10,
+        "text": "I sleep on an uncomfortable bed (for example, poor mattress or pillow, too much or not enough blankets) (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_11",
+        "number": 11,
+        "text": "I sleep in an uncomfortable bedroom (for example, too bright, too stuffy, too hot, too cold, or too noisy) (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_12",
+        "number": 12,
+        "text": "I do important work before bedtime (for example, pay bills, schedule, or study) (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "SLEEP_HYGIENE_13",
+        "number": 13,
+        "text": "I think, plan, or worry when I am in bed (0-4)",
+        "type": "EXPANSION",
+        "module": "Sleep Hygiene",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      }
+    ]
+  },
+  "DASS-21": {
+    "name": "DASS-21",
+    "description": "DASS-21: DEPRESSION ANXIETY STRESS SCALES",
+    "trigger_condition": "TRIGGER: Positive mental health gateway (depression or anxiety). Comprehensive assessment. Scale: 0=Never, 3=Almost always",
+    "question_count": 21,
+    "questions": [
+      {
+        "id": "DASS-21_1",
+        "number": 1,
+        "text": "I found it hard to wind down (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_2",
+        "number": 2,
+        "text": "I was aware of dryness of my mouth (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_3",
+        "number": 3,
+        "text": "I couldn't seem to experience any positive feeling at all (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_4",
+        "number": 4,
+        "text": "I experienced breathing difficulty (e.g., excessively rapid breathing, breathlessness) (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_5",
+        "number": 5,
+        "text": "I found it difficult to work up the initiative to do things (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_6",
+        "number": 6,
+        "text": "I tended to over-react to situations (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_7",
+        "number": 7,
+        "text": "I experienced trembling (e.g., in the hands) (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_8",
+        "number": 8,
+        "text": "I felt that I was using a lot of nervous energy (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_9",
+        "number": 9,
+        "text": "I was worried about situations in which I might panic and make a fool of myself (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_10",
+        "number": 10,
+        "text": "I felt that I had nothing to look forward to (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_11",
+        "number": 11,
+        "text": "I found myself getting agitated (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_12",
+        "number": 12,
+        "text": "I found it difficult to relax (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_13",
+        "number": 13,
+        "text": "I felt down-hearted and blue (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_14",
+        "number": 14,
+        "text": "I was intolerant of anything that kept me from getting on with what I was doing (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_15",
+        "number": 15,
+        "text": "I felt I was close to panic (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_16",
+        "number": 16,
+        "text": "I was unable to become enthusiastic about anything (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_17",
+        "number": 17,
+        "text": "I felt I wasn't worth much as a person (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_18",
+        "number": 18,
+        "text": "I felt that I was rather touchy (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_19",
+        "number": 19,
+        "text": "I was aware of the action of my heart in the absence of physical exertion (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_20",
+        "number": 20,
+        "text": "I felt scared without any good reason (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      },
+      {
+        "id": "DASS-21_21",
+        "number": 21,
+        "text": "I felt that life was meaningless (0-3)",
+        "type": "EXPANSION",
+        "module": "DASS-21",
+        "answer_type": "single_choice",
+        "options": [],
+        "triggers_expansion": false
+      }
+    ]
+  }
+}

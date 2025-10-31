@@ -1,0 +1,14 @@
+{
+  "total_questions": 116,
+  "core_questions": 31,
+  "expansion_questions": 85,
+  "modules": [
+    "DBAS-16",
+    "FSS",
+    "PSAS",
+    "FOSQ-10",
+    "Sleep Hygiene",
+    "DASS-21"
+  ],
+  "conditional_rules": 9
+}

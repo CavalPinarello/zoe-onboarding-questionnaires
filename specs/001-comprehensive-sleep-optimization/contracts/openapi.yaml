@@ -1,0 +1,624 @@
+openapi: 3.0.0
+info:
+  title: ZOE Sleep Optimization Platform API
+  version: 1.0.0
+  description: REST API for ZOE sleep optimization ecosystem
+  
+servers:
+  - url: https://api.zoe-sleep.com/v1
+    description: Production server
+  - url: https://staging-api.zoe-sleep.com/v1
+    description: Staging server
+    
+security:
+  - bearerAuth: []
+    
+paths:
+  /auth/register:
+    post:
+      summary: Register new user
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password, firstName, lastName, dateOfBirth]
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  minLength: 8
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                dateOfBirth:
+                  type: string
+                  format: date
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+          
+  /auth/login:
+    post:
+      summary: User login
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+          
+  /users/me:
+    get:
+      summary: Get current user profile
+      responses:
+        '200':
+          description: User profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    patch:
+      summary: Update user profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserUpdate'
+      responses:
+        '200':
+          description: Profile updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+                
+  /sleep-sessions:
+    get:
+      summary: Get user's sleep sessions
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 30
+      responses:
+        '200':
+          description: List of sleep sessions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SleepSession'
+    post:
+      summary: Create new sleep session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SleepSessionCreate'
+      responses:
+        '201':
+          description: Sleep session created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SleepSession'
+                
+  /sleep-sessions/{sessionId}:
+    get:
+      summary: Get specific sleep session
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Sleep session details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SleepSession'
+        '404':
+          $ref: '#/components/responses/NotFound'
+          
+  /protocols:
+    get:
+      summary: Get user's protocols
+      parameters:
+        - name: isActive
+          in: query
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: List of protocols
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Protocol'
+    post:
+      summary: Create new protocol
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProtocolCreate'
+      responses:
+        '201':
+          description: Protocol created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Protocol'
+                
+  /protocols/{protocolId}/actions:
+    get:
+      summary: Get protocol actions
+      parameters:
+        - name: protocolId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: List of protocol actions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProtocolAction'
+                  
+  /protocol-actions/{actionId}/complete:
+    post:
+      summary: Mark protocol action as complete
+      parameters:
+        - name: actionId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                completionValue:
+                  type: object
+                notes:
+                  type: string
+      responses:
+        '200':
+          description: Action marked complete
+          
+  /check-ins:
+    post:
+      summary: Submit sleep check-in
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckInCreate'
+      responses:
+        '201':
+          description: Check-in recorded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckIn'
+                
+  /insights:
+    get:
+      summary: Get user insights
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [new, viewed, dismissed, actioned]
+        - name: priority
+          in: query
+          schema:
+            type: string
+            enum: [high, medium, low]
+      responses:
+        '200':
+          description: List of insights
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Insight'
+                  
+  /community/protocols:
+    get:
+      summary: Browse community protocols
+      parameters:
+        - name: chronotype
+          in: query
+          schema:
+            type: string
+        - name: condition
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of community protocols
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CommunityProtocol'
+                  
+  /community/protocols/{protocolId}/adopt:
+    post:
+      summary: Adopt community protocol
+      parameters:
+        - name: protocolId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Protocol adopted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Protocol'
+                
+  /medical/escalate:
+    post:
+      summary: Request medical escalation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [reason, urgency]
+              properties:
+                reason:
+                  type: string
+                urgency:
+                  type: string
+                  enum: [immediate, urgent, routine]
+                context:
+                  type: string
+      responses:
+        '201':
+          description: Escalation created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  escalationId:
+                    type: string
+                  status:
+                    type: string
+                  estimatedResponse:
+                    type: string
+                    
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          type: string
+          format: email
+        profile:
+          type: object
+          properties:
+            firstName:
+              type: string
+            lastName:
+              type: string
+            dateOfBirth:
+              type: string
+              format: date
+            timezone:
+              type: string
+        preferences:
+          type: object
+          properties:
+            notificationsEnabled:
+              type: boolean
+            dataSharing:
+              type: string
+              enum: [private, anonymous, full]
+        chronotype:
+          type: object
+          properties:
+            category:
+              type: string
+            confidence:
+              type: number
+              
+    UserUpdate:
+      type: object
+      properties:
+        profile:
+          type: object
+        preferences:
+          type: object
+          
+    SleepSession:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        duration:
+          type: integer
+        quality:
+          type: object
+          properties:
+            overallScore:
+              type: number
+            efficiency:
+              type: number
+        stages:
+          type: object
+          properties:
+            deep:
+              type: integer
+            rem:
+              type: integer
+            light:
+              type: integer
+            awake:
+              type: integer
+              
+    SleepSessionCreate:
+      type: object
+      required: [startTime, endTime]
+      properties:
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        source:
+          type: string
+          enum: [apple_watch, manual, import]
+          
+    Protocol:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        isActive:
+          type: boolean
+        category:
+          type: string
+        evidenceLevel:
+          type: string
+          
+    ProtocolCreate:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+          
+    ProtocolAction:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+        scheduledTime:
+          type: string
+          format: time
+        importance:
+          type: string
+          
+    CheckIn:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        timestamp:
+          type: string
+          format: date-time
+        qualityScore:
+          type: number
+        energyLevel:
+          type: number
+        mood:
+          type: string
+          
+    CheckInCreate:
+      type: object
+      required: [qualityScore, energyLevel]
+      properties:
+        qualityScore:
+          type: number
+          minimum: 0
+          maximum: 10
+        energyLevel:
+          type: number
+          minimum: 0
+          maximum: 10
+        mood:
+          type: string
+        notes:
+          type: string
+          
+    Insight:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+        category:
+          type: string
+        priority:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          
+    CommunityProtocol:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        protocol:
+          $ref: '#/components/schemas/Protocol'
+        validation:
+          type: object
+          properties:
+            communityScore:
+              type: number
+            expertReviewed:
+              type: boolean
+        metrics:
+          type: object
+          properties:
+            adoptionCount:
+              type: integer
+            successRate:
+              type: number
+              
+    AuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        refreshToken:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+          
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+              details:
+                type: array
+                items:
+                  type: string
+                  
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string

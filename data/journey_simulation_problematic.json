@@ -1,0 +1,700 @@
+{
+  "persona": "problematic",
+  "simulation_date": "2025-10-31T15:42:02.761696",
+  "total_days": 14,
+  "total_questions_answered": 46,
+  "total_time_minutes": 47,
+  "expansions_triggered_count": 2,
+  "expansions_triggered": [
+    {
+      "day": 4,
+      "modules": [
+        "DBAS-16"
+      ],
+      "question_count": 16
+    },
+    {
+      "day": 13,
+      "modules": [],
+      "question_count": 0
+    }
+  ],
+  "daily_logs": {
+    "1": {
+      "day": 1,
+      "date_simulated": "2025-10-31T15:42:02.761562",
+      "title": "Welcome to ZOE",
+      "description": "Let's start with some basic information about you.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_1",
+          "text": "Full Name",
+          "response": "Simulated User"
+        },
+        {
+          "id": "CORE_2",
+          "text": "Date of Birth",
+          "response": "1975-11-13"
+        },
+        {
+          "id": "CORE_3",
+          "text": "Email",
+          "response": "user@example.com"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 3,
+      "total_time_minutes": 2
+    },
+    "2": {
+      "day": 2,
+      "date_simulated": "2025-10-31T15:42:02.761583",
+      "title": "Basic Profile",
+      "description": "A few more details to personalize your assessment.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_4",
+          "text": "Sex (Male/Female/Other)",
+          "response": "Male"
+        },
+        {
+          "id": "CORE_5",
+          "text": "Height",
+          "response": "Other"
+        },
+        {
+          "id": "CORE_6",
+          "text": "Weight",
+          "response": "131"
+        },
+        {
+          "id": "CORE_7",
+          "text": "Overall sleep quality in past month (1=Very poor, 10=Excelle...",
+          "response": "10=Excellent"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 4,
+      "total_time_minutes": 2
+    },
+    "3": {
+      "day": 3,
+      "date_simulated": "2025-10-31T15:42:02.761594",
+      "title": "Sleep Quality Check",
+      "description": "How has your sleep been lately?",
+      "core_questions_completed": [
+        {
+          "id": "CORE_8",
+          "text": "Hours of sleep per night (weeknight average)",
+          "response": "6.785717059008788"
+        },
+        {
+          "id": "CORE_9",
+          "text": "How often do you feel refreshed after sleep? (Never/Rarely/S...",
+          "response": "Sometimes"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 2,
+      "total_time_minutes": 2
+    },
+    "4": {
+      "day": 4,
+      "date_simulated": "2025-10-31T15:42:02.761604",
+      "title": "Sleep Difficulties",
+      "description": "Understanding your sleep patterns.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_10",
+          "text": "Do you have trouble falling asleep, staying asleep, or wakin...",
+          "response": "Yes"
+        }
+      ],
+      "expansions_triggered": [
+        {
+          "trigger_question_id": "CORE_10",
+          "trigger_response": "Yes",
+          "modules": [
+            "DBAS-16"
+          ],
+          "additional_questions": 16
+        }
+      ],
+      "total_questions_answered": 17,
+      "total_time_minutes": 11
+    },
+    "5": {
+      "day": 5,
+      "date_simulated": "2025-10-31T15:42:02.761631",
+      "title": "Daytime Energy",
+      "description": "How do you feel during the day?",
+      "core_questions_completed": [
+        {
+          "id": "CORE_11",
+          "text": "Do you feel excessively tired or sleepy during the day? (Nev...",
+          "response": "Sometimes"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 1,
+      "total_time_minutes": 3
+    },
+    "6": {
+      "day": 6,
+      "date_simulated": "2025-10-31T15:42:02.761637",
+      "title": "Breathing & Sleep",
+      "description": "Checking for breathing-related sleep issues.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_12",
+          "text": "Do you snore loudly? (Yes/No)",
+          "response": "No"
+        },
+        {
+          "id": "CORE_13",
+          "text": "Has anyone observed you stop breathing during sleep? (Yes/No...",
+          "response": "No"
+        },
+        {
+          "id": "CORE_14",
+          "text": "Neck circumference (inches)",
+          "response": "16.228110365306737"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 3,
+      "total_time_minutes": 3
+    },
+    "7": {
+      "day": 7,
+      "date_simulated": "2025-10-31T15:42:02.761646",
+      "title": "Circadian Rhythm",
+      "description": "Understanding your natural sleep-wake cycle.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_15",
+          "text": "In the past 2 weeks, have you felt down, depressed, or hopel...",
+          "response": "Not at all"
+        },
+        {
+          "id": "CORE_16",
+          "text": "In the past 2 weeks, have you felt nervous, anxious, or on e...",
+          "response": "Not at all"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 2,
+      "total_time_minutes": 3
+    },
+    "8": {
+      "day": 8,
+      "date_simulated": "2025-10-31T15:42:02.761652",
+      "title": "Sleep Environment",
+      "description": "How your bedroom affects your sleep.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_17",
+          "text": "Do you have pain that affects your sleep? (Yes/No)",
+          "response": "Yes"
+        },
+        {
+          "id": "CORE_18",
+          "text": "If yes, pain severity on average (0-10)",
+          "response": "7"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 2,
+      "total_time_minutes": 3
+    },
+    "9": {
+      "day": 9,
+      "date_simulated": "2025-10-31T15:42:02.761658",
+      "title": "Lifestyle Factors",
+      "description": "Daily habits that impact sleep.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_19",
+          "text": "Do you experience memory problems, difficulty concentrating,...",
+          "response": "No"
+        },
+        {
+          "id": "CORE_20",
+          "text": "Typical bedtime on work days (HH:MM)",
+          "response": "Other"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 2,
+      "total_time_minutes": 3
+    },
+    "10": {
+      "day": 10,
+      "date_simulated": "2025-10-31T15:42:02.761663",
+      "title": "Mental Health",
+      "description": "Stress, mood, and sleep connection.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_21",
+          "text": "Typical wake time on work days (HH:MM)",
+          "response": "Other"
+        },
+        {
+          "id": "CORE_22",
+          "text": "Typical bedtime on free days (HH:MM)",
+          "response": "Other"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 2,
+      "total_time_minutes": 3
+    },
+    "11": {
+      "day": 11,
+      "date_simulated": "2025-10-31T15:42:02.761668",
+      "title": "Physical Health",
+      "description": "Your overall health and sleep.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_23",
+          "text": "Typical wake time on free days (HH:MM)",
+          "response": "Other"
+        },
+        {
+          "id": "CORE_24",
+          "text": "Do you exercise regularly? (Yes/No)",
+          "response": "Yes"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 2,
+      "total_time_minutes": 3
+    },
+    "12": {
+      "day": 12,
+      "date_simulated": "2025-10-31T15:42:02.761676",
+      "title": "Social Factors",
+      "description": "Relationships and sleep patterns.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_25",
+          "text": "If yes, hours per week",
+          "response": "6.206632198802572"
+        },
+        {
+          "id": "CORE_26",
+          "text": "Do you consume caffeine? (Yes/No)",
+          "response": "Yes"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 2,
+      "total_time_minutes": 3
+    },
+    "13": {
+      "day": 13,
+      "date_simulated": "2025-10-31T15:42:02.761682",
+      "title": "Technology Use",
+      "description": "Screen time and sleep.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_27",
+          "text": "If yes, time of last caffeinated beverage (HH:MM)",
+          "response": "Other"
+        },
+        {
+          "id": "CORE_28",
+          "text": "Do you notice your diet affects your sleep? (Yes/No)",
+          "response": "Yes"
+        }
+      ],
+      "expansions_triggered": [
+        {
+          "trigger_question_id": "CORE_28",
+          "trigger_response": "Yes",
+          "modules": [],
+          "additional_questions": 0
+        }
+      ],
+      "total_questions_answered": 2,
+      "total_time_minutes": 3
+    },
+    "14": {
+      "day": 14,
+      "date_simulated": "2025-10-31T15:42:02.761689",
+      "title": "Final Questions",
+      "description": "Completing your sleep profile.",
+      "core_questions_completed": [
+        {
+          "id": "CORE_29",
+          "text": "Do you have any diagnosed sleep disorders? If yes, list:",
+          "response": "Other"
+        },
+        {
+          "id": "CORE_30",
+          "text": "Are you currently taking any medications? If yes, list:",
+          "response": "Other"
+        }
+      ],
+      "expansions_triggered": [],
+      "total_questions_answered": 2,
+      "total_time_minutes": 3
+    }
+  },
+  "user_responses": {
+    "CORE_1": {
+      "question_id": "CORE_1",
+      "question_text": "Full Name",
+      "response": "Simulated User",
+      "day": 1,
+      "timestamp": "2025-10-31T15:42:02.761566"
+    },
+    "CORE_2": {
+      "question_id": "CORE_2",
+      "question_text": "Date of Birth",
+      "response": "1975-11-13",
+      "day": 1,
+      "timestamp": "2025-10-31T15:42:02.761576"
+    },
+    "CORE_3": {
+      "question_id": "CORE_3",
+      "question_text": "Email",
+      "response": "user@example.com",
+      "day": 1,
+      "timestamp": "2025-10-31T15:42:02.761577"
+    },
+    "CORE_4": {
+      "question_id": "CORE_4",
+      "question_text": "Sex (Male/Female/Other)",
+      "response": "Male",
+      "day": 2,
+      "timestamp": "2025-10-31T15:42:02.761585"
+    },
+    "CORE_5": {
+      "question_id": "CORE_5",
+      "question_text": "Height",
+      "response": "Other",
+      "day": 2,
+      "timestamp": "2025-10-31T15:42:02.761586"
+    },
+    "CORE_6": {
+      "question_id": "CORE_6",
+      "question_text": "Weight",
+      "response": 131,
+      "day": 2,
+      "timestamp": "2025-10-31T15:42:02.761588"
+    },
+    "CORE_7": {
+      "question_id": "CORE_7",
+      "question_text": "Overall sleep quality in past month (1=Very poor, 10=Excellent)",
+      "response": "10=Excellent",
+      "day": 2,
+      "timestamp": "2025-10-31T15:42:02.761590"
+    },
+    "CORE_8": {
+      "question_id": "CORE_8",
+      "question_text": "Hours of sleep per night (weeknight average)",
+      "response": 6.785717059008788,
+      "day": 3,
+      "timestamp": "2025-10-31T15:42:02.761595"
+    },
+    "CORE_9": {
+      "question_id": "CORE_9",
+      "question_text": "How often do you feel refreshed after sleep? (Never/Rarely/Sometimes/Often/Always)",
+      "response": "Sometimes",
+      "day": 3,
+      "timestamp": "2025-10-31T15:42:02.761601"
+    },
+    "CORE_10": {
+      "question_id": "CORE_10",
+      "question_text": "Do you have trouble falling asleep, staying asleep, or waking too early? (Yes/No)",
+      "response": "Yes",
+      "day": 4,
+      "timestamp": "2025-10-31T15:42:02.761605"
+    },
+    "DBAS-16_1": {
+      "question_id": "DBAS-16_1",
+      "question_text": "I need 8 hours of sleep to feel refreshed and function well during the day (0-10)",
+      "response": 7,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761608"
+    },
+    "DBAS-16_2": {
+      "question_id": "DBAS-16_2",
+      "question_text": "When I don't get the proper amount of sleep on a given night, I need to catch up on the next day by napping or sleeping longer (0-10)",
+      "response": 7,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761610"
+    },
+    "DBAS-16_3": {
+      "question_id": "DBAS-16_3",
+      "question_text": "I am concerned that chronic insomnia may have serious consequences on my physical health (0-10)",
+      "response": 6,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761611"
+    },
+    "DBAS-16_4": {
+      "question_id": "DBAS-16_4",
+      "question_text": "I am worried that I may lose control over my abilities to sleep (0-10)",
+      "response": 6,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761612"
+    },
+    "DBAS-16_5": {
+      "question_id": "DBAS-16_5",
+      "question_text": "After a poor night's sleep, I know that it will interfere with my daily activities on the next day (0-10)",
+      "response": 8,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761613"
+    },
+    "DBAS-16_6": {
+      "question_id": "DBAS-16_6",
+      "question_text": "In order to be alert and function well during the day, I believe I would be better off taking a sleeping pill rather than having a poor night's sleep (0-10)",
+      "response": 5,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761614"
+    },
+    "DBAS-16_7": {
+      "question_id": "DBAS-16_7",
+      "question_text": "When I feel irritable, depressed, or anxious during the day, it is mostly because I did not sleep well the night before (0-10)",
+      "response": 7,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761615"
+    },
+    "DBAS-16_8": {
+      "question_id": "DBAS-16_8",
+      "question_text": "When I sleep poorly on one night, I know it will disturb my sleep schedule for the whole week (0-10)",
+      "response": 6,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761616"
+    },
+    "DBAS-16_9": {
+      "question_id": "DBAS-16_9",
+      "question_text": "Without an adequate night's sleep, I can hardly function the next day (0-10)",
+      "response": 4,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761618"
+    },
+    "DBAS-16_10": {
+      "question_id": "DBAS-16_10",
+      "question_text": "I can't ever predict whether I'll have a good or poor night's sleep (0-10)",
+      "response": 4,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761619"
+    },
+    "DBAS-16_11": {
+      "question_id": "DBAS-16_11",
+      "question_text": "I have little ability to manage the negative consequences of disturbed sleep (0-10)",
+      "response": 6,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761620"
+    },
+    "DBAS-16_12": {
+      "question_id": "DBAS-16_12",
+      "question_text": "When I feel tired, have no energy, or just seem not to function well during the day, it is generally because I did not sleep well the night before (0-10)",
+      "response": 5,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761621"
+    },
+    "DBAS-16_13": {
+      "question_id": "DBAS-16_13",
+      "question_text": "I believe insomnia is essentially the result of a chemical imbalance (0-10)",
+      "response": 7,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761622"
+    },
+    "DBAS-16_14": {
+      "question_id": "DBAS-16_14",
+      "question_text": "I feel that insomnia is ruining my ability to enjoy life and prevents me from doing what I want (0-10)",
+      "response": 5,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761623"
+    },
+    "DBAS-16_15": {
+      "question_id": "DBAS-16_15",
+      "question_text": "Medication is probably the only solution to sleeplessness (0-10)",
+      "response": 3,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761624"
+    },
+    "DBAS-16_16": {
+      "question_id": "DBAS-16_16",
+      "question_text": "I avoid or cancel obligations (social, family) after a poor night's sleep (0-10)",
+      "response": 6,
+      "day": 4,
+      "module": "DBAS-16",
+      "expansion": true,
+      "timestamp": "2025-10-31T15:42:02.761625"
+    },
+    "CORE_11": {
+      "question_id": "CORE_11",
+      "question_text": "Do you feel excessively tired or sleepy during the day? (Never/Rarely/Sometimes/Often/Always)",
+      "response": "Sometimes",
+      "day": 5,
+      "timestamp": "2025-10-31T15:42:02.761633"
+    },
+    "CORE_12": {
+      "question_id": "CORE_12",
+      "question_text": "Do you snore loudly? (Yes/No)",
+      "response": "No",
+      "day": 6,
+      "timestamp": "2025-10-31T15:42:02.761639"
+    },
+    "CORE_13": {
+      "question_id": "CORE_13",
+      "question_text": "Has anyone observed you stop breathing during sleep? (Yes/No)",
+      "response": "No",
+      "day": 6,
+      "timestamp": "2025-10-31T15:42:02.761640"
+    },
+    "CORE_14": {
+      "question_id": "CORE_14",
+      "question_text": "Neck circumference (inches)",
+      "response": 16.228110365306737,
+      "day": 6,
+      "timestamp": "2025-10-31T15:42:02.761642"
+    },
+    "CORE_15": {
+      "question_id": "CORE_15",
+      "question_text": "In the past 2 weeks, have you felt down, depressed, or hopeless? (Not at all/Several days/More than half/Nearly every day)",
+      "response": "Not at all",
+      "day": 7,
+      "timestamp": "2025-10-31T15:42:02.761647"
+    },
+    "CORE_16": {
+      "question_id": "CORE_16",
+      "question_text": "In the past 2 weeks, have you felt nervous, anxious, or on edge? (Not at all/Several days/More than half/Nearly every day)",
+      "response": "Not at all",
+      "day": 7,
+      "timestamp": "2025-10-31T15:42:02.761648"
+    },
+    "CORE_17": {
+      "question_id": "CORE_17",
+      "question_text": "Do you have pain that affects your sleep? (Yes/No)",
+      "response": "Yes",
+      "day": 8,
+      "timestamp": "2025-10-31T15:42:02.761653"
+    },
+    "CORE_18": {
+      "question_id": "CORE_18",
+      "question_text": "If yes, pain severity on average (0-10)",
+      "response": 7,
+      "day": 8,
+      "timestamp": "2025-10-31T15:42:02.761654"
+    },
+    "CORE_19": {
+      "question_id": "CORE_19",
+      "question_text": "Do you experience memory problems, difficulty concentrating, or mental fog? (Yes/No)",
+      "response": "No",
+      "day": 9,
+      "timestamp": "2025-10-31T15:42:02.761659"
+    },
+    "CORE_20": {
+      "question_id": "CORE_20",
+      "question_text": "Typical bedtime on work days (HH:MM)",
+      "response": "Other",
+      "day": 9,
+      "timestamp": "2025-10-31T15:42:02.761660"
+    },
+    "CORE_21": {
+      "question_id": "CORE_21",
+      "question_text": "Typical wake time on work days (HH:MM)",
+      "response": "Other",
+      "day": 10,
+      "timestamp": "2025-10-31T15:42:02.761664"
+    },
+    "CORE_22": {
+      "question_id": "CORE_22",
+      "question_text": "Typical bedtime on free days (HH:MM)",
+      "response": "Other",
+      "day": 10,
+      "timestamp": "2025-10-31T15:42:02.761665"
+    },
+    "CORE_23": {
+      "question_id": "CORE_23",
+      "question_text": "Typical wake time on free days (HH:MM)",
+      "response": "Other",
+      "day": 11,
+      "timestamp": "2025-10-31T15:42:02.761669"
+    },
+    "CORE_24": {
+      "question_id": "CORE_24",
+      "question_text": "Do you exercise regularly? (Yes/No)",
+      "response": "Yes",
+      "day": 11,
+      "timestamp": "2025-10-31T15:42:02.761670"
+    },
+    "CORE_25": {
+      "question_id": "CORE_25",
+      "question_text": "If yes, hours per week",
+      "response": 6.206632198802572,
+      "day": 12,
+      "timestamp": "2025-10-31T15:42:02.761677"
+    },
+    "CORE_26": {
+      "question_id": "CORE_26",
+      "question_text": "Do you consume caffeine? (Yes/No)",
+      "response": "Yes",
+      "day": 12,
+      "timestamp": "2025-10-31T15:42:02.761679"
+    },
+    "CORE_27": {
+      "question_id": "CORE_27",
+      "question_text": "If yes, time of last caffeinated beverage (HH:MM)",
+      "response": "Other",
+      "day": 13,
+      "timestamp": "2025-10-31T15:42:02.761683"
+    },
+    "CORE_28": {
+      "question_id": "CORE_28",
+      "question_text": "Do you notice your diet affects your sleep? (Yes/No)",
+      "response": "Yes",
+      "day": 13,
+      "timestamp": "2025-10-31T15:42:02.761684"
+    },
+    "CORE_29": {
+      "question_id": "CORE_29",
+      "question_text": "Do you have any diagnosed sleep disorders? If yes, list:",
+      "response": "Other",
+      "day": 14,
+      "timestamp": "2025-10-31T15:42:02.761690"
+    },
+    "CORE_30": {
+      "question_id": "CORE_30",
+      "question_text": "Are you currently taking any medications? If yes, list:",
+      "response": "Other",
+      "day": 14,
+      "timestamp": "2025-10-31T15:42:02.761691"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "trigger_question_id": "CORE_10",
+    "condition": "YES",
+    "expanded_modules": [
+      "ISI",
+      "DBAS-16",
+      "Pre-Sleep Arousal Scale"
+    ],
+    "rule_text": "→ IF YES: Expand to ISI (7 questions) + DBAS-16 (16 questions) + Pre-Sleep Arousal Scale (16 questions)"
+  },
+  {
+    "trigger_question_id": "CORE_11",
+    "condition": "Often/Always",
+    "expanded_modules": [
+      "ESS",
+      "FOSQ-10",
+      "FSS"
+    ],
+    "rule_text": "→ IF Often/Always: Expand to ESS (8 questions) + FOSQ-10 (10 questions) + FSS (9 questions)"
+  },
+  {
+    "trigger_question_id": "CORE_14",
+    "condition": "any YES or neck >16in",
+    "expanded_modules": [
+      "Full STOP-BANG",
+      "Berlin Questionnaire"
+    ],
+    "rule_text": "→ IF any YES or neck >16in: Expand to Full STOP-BANG (8 questions) + Berlin Questionnaire (10 questions)"
+  },
+  {
+    "trigger_question_id": "CORE_16",
+    "condition": "More than half/Nearly every day",
+    "expanded_modules": [
+      "PHQ-9",
+      "GAD-7",
+      "DASS-21"
+    ],
+    "rule_text": "→ IF More than half/Nearly every day: Expand to PHQ-9 (9 questions) + GAD-7 (7 questions) + DASS-21 (21 questions)"
+  },
+  {
+    "trigger_question_id": "CORE_18",
+    "condition": "YES and score ≥4",
+    "expanded_modules": [
+      "Brief Pain Inventory",
+      "Pain Catastrophizing Scale"
+    ],
+    "rule_text": "→ IF YES and score ≥4: Expand to Brief Pain Inventory (13 questions) + Pain Catastrophizing Scale (13 questions)"
+  },
+  {
+    "trigger_question_id": "CORE_19",
+    "condition": "YES",
+    "expanded_modules": [
+      "PROMIS Cognitive Function",
+      "Cognitive Failures Questionnaire"
+    ],
+    "rule_text": "→ IF YES: Expand to PROMIS Cognitive Function (8 questions) + Cognitive Failures Questionnaire (25 questions)"
+  },
+  {
+    "trigger_question_id": "CORE_23",
+    "condition": "difference >1 hour",
+    "expanded_modules": [
+      "Full MCTQ",
+      "MEQ"
+    ],
+    "rule_text": "→ IF difference >1 hour: Expand to Full MCTQ (10 questions) + MEQ (19 questions for detailed chronotype)"
+  },
+  {
+    "trigger_question_id": "CORE_25",
+    "condition": "YES and >5 hours/week",
+    "expanded_modules": [
+      "RESTQ-Sport",
+      "Training Load Assessment"
+    ],
+    "rule_text": "→ IF YES and >5 hours/week: Expand to RESTQ-Sport (20 questions) + Training Load Assessment (15 questions)"
+  },
+  {
+    "trigger_question_id": "CORE_28",
+    "condition": "YES to diet impact",
+    "expanded_modules": [
+      "MEDAS",
+      "Food Timing Questionnaire"
+    ],
+    "rule_text": "→ IF YES to diet impact: Expand to MEDAS (14 questions) + Food Timing Questionnaire (12 questions)"
+  }
+]
