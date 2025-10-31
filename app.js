@@ -97,12 +97,21 @@ class ZOEApp {
         document.getElementById('progressContainer').style.display = 'block';
         this.updateProgress();
 
-        // Prepare today's questions - exclude basic demographics (name, email, DOB, sex, height, weight)
-        const demographicKeywords = ['full name', 'date of birth', 'email', 'sex (', 'height', 'weight'];
+        // Prepare today's questions - only exclude basic profile fields, keep all assessment questions
         this.todayQuestions = dayData.core_questions.filter(q => {
-            const textLower = q.text.toLowerCase();
-            return !demographicKeywords.some(keyword => textLower.includes(keyword));
+            // Only filter out these specific IDs (basic profile info)
+            const excludeIds = ['CORE_1', 'CORE_2', 'CORE_3', 'CORE_4', 'CORE_5', 'CORE_6'];
+            return !excludeIds.includes(q.id);
         });
+        
+        // If no questions after filtering (Days 1-2 are all demographics), skip to next day
+        if (this.todayQuestions.length === 0) {
+            console.log('No assessment questions today, skipping to next day');
+            this.currentDay++;
+            this.saveProgress();
+            this.showDayScreen();
+            return;
+        }
         
         // Check for expansions from previous responses
         if (dayData.possible_expansions && dayData.possible_expansions.length > 0) {
