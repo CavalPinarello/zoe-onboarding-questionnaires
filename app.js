@@ -201,8 +201,11 @@ class ZOEApp {
             this.currentQuestionIndex > 0 ? 'inline-block' : 'none';
 
         // Update next button text
-        document.getElementById('nextBtn').textContent = 
-            this.currentQuestionIndex === this.todayQuestions.length - 1 ? 'Complete Day' : 'Next';
+        const isLastQuestion = this.currentQuestionIndex === this.todayQuestions.length - 1;
+        document.getElementById('nextBtn').textContent = isLastQuestion ? 'Complete Day' : 'Next';
+        
+        // Hide skip button on last question
+        document.getElementById('skipBtn').style.display = isLastQuestion ? 'none' : 'inline-block';
 
         // Pre-fill if already answered
         const savedResponse = this.userResponses[question.id];
@@ -420,6 +423,12 @@ class ZOEApp {
         }
         
         container.innerHTML = html;
+    }
+
+    skipToNextDay() {
+        if (confirm('Skip the rest of today\'s questions and move to the next day?')) {
+            this.continueToNextDay();
+        }
     }
 
     continueToNextDay() {

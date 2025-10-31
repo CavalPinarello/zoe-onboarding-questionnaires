@@ -461,6 +461,7 @@
 
                 <div class="navigation">
                     <button class="btn" onclick="app.startDayQuestions()">Begin Today's Questions</button>
+                    <button class="btn btn-secondary" onclick="app.skipToNextDay()">Skip to Next Day →</button>
                 </div>
             </div>
 
@@ -473,8 +474,13 @@
                 </div>
 
                 <div class="navigation">
-                    <button class="btn btn-secondary" onclick="app.previousQuestion()" id="prevBtn" style="display: none;">Previous</button>
-                    <button class="btn" onclick="app.nextQuestion()" id="nextBtn">Next</button>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn btn-secondary" onclick="app.previousQuestion()" id="prevBtn" style="display: none;">Previous</button>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn" onclick="app.nextQuestion()" id="nextBtn">Next</button>
+                        <button class="btn btn-secondary" onclick="app.skipToNextDay()" id="skipBtn">Skip to Next Day →</button>
+                    </div>
                 </div>
             </div>
 
