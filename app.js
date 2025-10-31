@@ -27,9 +27,16 @@ class ZOEApp {
             this.questionsData = await questionsResponse.json();
             
             console.log('Data loaded successfully');
+            this.dataLoaded = true;
         } catch (error) {
             console.error('Error loading data:', error);
             alert('Error loading questionnaire data. Please refresh the page.');
+        }
+    }
+    
+    async waitForData() {
+        while (!this.dataLoaded) {
+            await new Promise(resolve => setTimeout(resolve, 100));
         }
     }
 
@@ -55,12 +62,14 @@ class ZOEApp {
         localStorage.setItem('zoeProgress', JSON.stringify(data));
     }
 
-    startJourney() {
+    async startJourney() {
         const name = document.getElementById('userName').value.trim();
         if (!name) {
             alert('Please enter your name to begin');
             return;
         }
+
+        await this.waitForData();
 
         this.userData.name = name;
         this.userData.email = document.getElementById('userEmail').value.trim();
@@ -88,8 +97,12 @@ class ZOEApp {
         document.getElementById('progressContainer').style.display = 'block';
         this.updateProgress();
 
-        // Prepare today's questions
-        this.todayQuestions = [...dayData.core_questions];
+        // Prepare today's questions - exclude basic demographics (name, email, DOB, sex, height, weight)
+        const demographicKeywords = ['full name', 'date of birth', 'email', 'sex (', 'height', 'weight'];
+        this.todayQuestions = dayData.core_questions.filter(q => {
+            const textLower = q.text.toLowerCase();
+            return !demographicKeywords.some(keyword => textLower.includes(keyword));
+        });
         
         // Check for expansions from previous responses
         if (dayData.possible_expansions && dayData.possible_expansions.length > 0) {
@@ -159,12 +172,16 @@ class ZOEApp {
     }
 
     startDayQuestions() {
+        console.log('Starting day questions, total:', this.todayQuestions.length);
         this.showQuestionScreen();
     }
 
     showQuestionScreen() {
+        console.log(`Question ${this.currentQuestionIndex + 1} of ${this.todayQuestions.length}`);
+        
         if (this.currentQuestionIndex >= this.todayQuestions.length) {
-            this.completeDayscreen();
+            console.log('Day complete, showing summary');
+            this.completeDayScreen();
             return;
         }
 
@@ -318,15 +335,19 @@ class ZOEApp {
     }
 
     nextQuestion() {
+        console.log('Next button clicked');
         const answer = this.getCurrentAnswer();
+        console.log('Current answer:', answer);
         
-        if (!answer || answer.trim() === '') {
+        if (!answer || (typeof answer === 'string' && answer.trim() === '')) {
             alert('Please answer the question before continuing');
             return;
         }
 
         // Save response
         const question = this.todayQuestions[this.currentQuestionIndex];
+        console.log('Saving response for question:', question.id);
+        
         this.userResponses[question.id] = {
             question_id: question.id,
             question_text: question.text,
@@ -339,6 +360,7 @@ class ZOEApp {
 
         // Move to next question
         this.currentQuestionIndex++;
+        console.log('Moving to question index:', this.currentQuestionIndex);
         this.showQuestionScreen();
     }
 
