@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOE Sleep Assessment - 14-Day Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .progress-container {
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .welcome-screen, .day-screen, .question-screen, .complete-screen {
+            display: none;
+        }
+
+        .welcome-screen.active, .day-screen.active, .question-screen.active, .complete-screen.active {
+            display: block;
+        }
+
+        .welcome-content {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .welcome-content h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .welcome-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .user-input {
+            margin: 30px 0;
+        }
+
+        .user-input input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .user-input input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            margin-left: 10px;
+        }
+
+        .day-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .day-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .day-description {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .question-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .answer-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .answer-option {
+            padding: 15px 20px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .answer-option:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .answer-option.selected {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+
+        .answer-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .scale-input {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .scale-values {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+        }
+
+        .scale-value {
+            flex: 1;
+            padding: 15px 10px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        .scale-value:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .scale-value.selected {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .expansion-alert {
+            background: #fff5f5;
+            border-left: 4px solid #ff6b6b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .expansion-alert h3 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .expansion-alert p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .complete-content {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .complete-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        .complete-content h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .results-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .results-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .day-summary {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .day-badge {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .day-badge.completed {
+            background: #667eea;
+            color: white;
+        }
+
+        .day-badge.current {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .scale-values {
+                flex-wrap: wrap;
+            }
+
+            .scale-value {
+                flex-basis: calc(20% - 5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💤 ZOE Sleep Assessment</h1>
+            <p>Your Personal 14-Day Sleep Health Journey</p>
+        </div>
+
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="progressText">Day 1 of 14</span>
+                <span id="completionText">0% complete</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Welcome Screen -->
+            <div class="welcome-screen active" id="welcomeScreen">
+                <div class="welcome-content">
+                    <h2>Welcome to Your Sleep Health Journey</h2>
+                    <p>Over the next 14 days, we'll help you understand your unique sleep profile through an adaptive assessment.</p>
+                    <p><strong>What to expect:</strong></p>
+                    <p>• Just 2-4 quick questions each day (2-3 minutes)</p>
+                    <p>• Some days may have additional questions based on your responses</p>
+                    <p>• Your data is stored locally in your browser</p>
+                    <p>• You can pause and continue anytime</p>
+                    
+                    <div class="user-input">
+                        <input type="text" id="userName" placeholder="What's your name?" />
+                        <input type="email" id="userEmail" placeholder="Email address (optional)" />
+                    </div>
+
+                    <button class="btn" onclick="app.startJourney()">Start Your Journey</button>
+                </div>
+            </div>
+
+            <!-- Day Introduction Screen -->
+            <div class="day-screen" id="dayScreen">
+                <div class="day-header">
+                    <div class="day-number" id="dayNumber">Day 1</div>
+                    <div class="day-title" id="dayTitle">Welcome to ZOE</div>
+                    <div class="day-description" id="dayDescription">Let's start with some basic information about you.</div>
+                </div>
+
+                <div id="expansionAlert"></div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number" id="todayQuestions">0</div>
+                        <div class="stat-label">Questions Today</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="todayMinutes">0</div>
+                        <div class="stat-label">Minutes</div>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <button class="btn" onclick="app.startDayQuestions()">Begin Today's Questions</button>
+                </div>
+            </div>
+
+            <!-- Question Screen -->
+            <div class="question-screen" id="questionScreen">
+                <div class="question-card">
+                    <div class="question-number" id="questionNumber">Question 1 of 3</div>
+                    <div class="question-text" id="questionText"></div>
+                    <div id="answerContainer"></div>
+                </div>
+
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="app.previousQuestion()" id="prevBtn" style="display: none;">Previous</button>
+                    <button class="btn" onclick="app.nextQuestion()" id="nextBtn">Next</button>
+                </div>
+            </div>
+
+            <!-- Complete Screen -->
+            <div class="complete-screen" id="completeScreen">
+                <div class="complete-content">
+                    <div class="complete-icon">🎉</div>
+                    <h2>Day Complete!</h2>
+                    <p id="completeMessage">Great work today! You've completed all questions for today.</p>
+
+                    <div class="results-card">
+                        <h3>Today's Summary</h3>
+                        <p><strong>Questions answered:</strong> <span id="summaryQuestions">0</span></p>
+                        <p><strong>Time spent:</strong> <span id="summaryTime">0</span> minutes</p>
+                        <p id="expansionSummary"></p>
+                    </div>
+
+                    <div class="day-summary" id="daySummary"></div>
+
+                    <div class="navigation">
+                        <button class="btn" onclick="app.viewResults()">View My Responses</button>
+                        <button class="btn btn-secondary" onclick="app.continueToNextDay()" id="nextDayBtn">Continue to Next Day</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data/questions.json"></script>
+    <script src="data/14day_schedule.json"></script>
+    <script src="app.js"></script>
+</body>
+</html>

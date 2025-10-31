@@ -1,23 +1,27 @@
 # 💤 ZOE Adaptive Onboarding System
 
-**Version:** 1.0  
-**Status:** Proof of Concept - Interactive Visualization  
+**Version:** 2.0 - Fully Functional Patient Journey  
+**Status:** Ready for Testing  
+**Live Demo:** [Try it now](https://cavalpinarello.github.io/zoe-onboarding-questionnaires/app.html)  
 **Linear Project:** [ZOE Onboarding Questionnaires](https://linear.app/sleepos/project/zoe-onboarding-questionnaires-1c7dc3bd90f7)
 
 ---
 
 ## 🎯 Overview
 
-The ZOE Adaptive Onboarding System is an intelligent, conditionally expanding assessment engine that maps each user's unique sleep phenotype through a dynamic 14-day journey.
+The ZOE Adaptive Onboarding System is a **fully functional, interactive web application** that guides users through an intelligent 14-day sleep health assessment. Answer real questions, trigger adaptive expansions, and track your progress through a personalized sleep phenotyping journey.
 
 ### Key Features
 
+✅ **Real Patient Journey** - Fully functional questionnaire app  
 ✅ **116+ Questions** across 15 sleep health pillars  
-✅ **14-Day Distribution** with intelligent pacing (2-4 questions/day baseline)  
-✅ **Adaptive Logic** - Trigger-based expansion modules  
-✅ **Interactive Visualization** - Collapsible tree view  
-✅ **Patient Journey Simulator** - Test adaptive flows  
-✅ **Supabase-Ready** - Structured JSON schemas
+✅ **14-Day Distribution** with intelligent pacing (2-4 questions/day)  
+✅ **Adaptive Logic** - Questions expand based on your answers  
+✅ **Multiple Question Types** - Yes/No, scales, text input, dates, etc.  
+✅ **Progress Tracking** - Visual progress bar and day badges  
+✅ **Local Storage** - Resume anytime, data stays in your browser  
+✅ **Export Responses** - Download your assessment data as JSON  
+✅ **Multi-Patient Testing** - Perfect for team testing and validation
 
 ---
 
@@ -40,6 +44,73 @@ ZOE/
 ---
 
 ## 🚀 Quick Start
+
+### Option 1: Use the Live Demo (Easiest)
+
+**👉 [Open the Live App](https://cavalpinarello.github.io/zoe-onboarding-questionnaires/app.html)**
+
+1. Click the link above
+2. Enter your name
+3. Start answering questions!
+4. Your progress is saved automatically in your browser
+
+### Option 2: Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/CavalPinarello/zoe-onboarding-questionnaires.git
+cd zoe-onboarding-questionnaires
+
+# Start a local server
+python3 -m http.server 8080
+
+# Open in your browser
+open http://localhost:8080/app.html
+```
+
+### Option 3: Test with Multiple Patients
+
+Open the app in different browser profiles or incognito windows to simulate multiple patients:
+
+1. **Regular window** - Patient 1
+2. **Incognito/Private window** - Patient 2  
+3. **Different browser** - Patient 3
+
+Each will maintain separate progress!
+
+---
+
+## 📱 How to Use the App
+
+### Starting Your Journey
+
+1. **Welcome Screen** - Enter your name and optionally your email
+2. **Day Introduction** - See today's questions count and estimated time
+3. **Answer Questions** - Choose from multiple-choice, scales, or text inputs
+4. **Adaptive Expansion** - Get additional questions based on your answers
+5. **Day Complete** - View summary and continue to next day
+6. **Export Results** - Download your responses as JSON
+
+### Understanding Adaptive Logic
+
+The app asks everyone 2-4 core questions per day. But it gets smarter:
+
+**Example - Day 4: Sleep Difficulties**
+- You answer: "Yes, I have trouble falling asleep"
+- 🔄 **Expansion Triggered!**
+- System: "We'd like to understand this better. 16 additional questions (8 min)"
+- You continue with deeper assessment about your insomnia
+
+**Example - Day 5: Daytime Energy**  
+- You answer: "I often feel sleepy during the day"
+- 🔄 **Expansion Triggered!**
+- System adds 19 questions about daytime functioning and fatigue
+
+This ensures everyone gets a personalized assessment - only diving deeper where needed!
+
+---
+
+## 🧪 For Developers
 
 ### 1. Parse Excel Questionnaire
 
